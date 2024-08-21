@@ -70,3 +70,4 @@ C:\ctaraba\DotnetAPI2\obj\Debug\net8.0\DotnetAPI2.pdb
 C:\ctaraba\DotnetAPI2\obj\Debug\net8.0\DotnetAPI2.genruntimeconfig.cache
 C:\ctaraba\DotnetAPI2\obj\Debug\net8.0\ref\DotnetAPI2.dll
 C:\ctaraba\DotnetAPI2\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\ctaraba\DotnetAPI2\obj\Debug\net8.0\DotnetAPI2.sourcelink.json
