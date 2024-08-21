@@ -34,12 +34,7 @@ public class UserCompleteController : ControllerBase
     [HttpPut("UpsertUser")]
     public IActionResult UpsertUser(UserComplete user)
     {
-        if (_reusableSQL.UpsertUser(user))
-        {
-            return Ok();
-        }
-
-        throw new Exception("Failed to Update User");
+        return Ok(_userService.UpsertUser(user));
     }
 
     [HttpDelete("DeleteUser/{userId}")]

@@ -2,6 +2,7 @@ using System.Data;
 using AutoMapper;
 using Dapper;
 using DotnetAPI2.Data;
+using DotnetAPI2.Helpers;
 using DotnetAPI2.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,10 +11,11 @@ namespace DotnetAPI2.Services
     public class UserService : IUserService
     {
         private readonly DataContextDapper _dapper;
-
+        private readonly ReusableSQL _reusableSQL;
         public UserService(IConfiguration config)
         {
             _dapper = new DataContextDapper(config);
+            _reusableSQL = new ReusableSQL(config);
         }
 
         public IEnumerable<UserComplete> GetUsers(int userId, bool isActive)
@@ -38,6 +40,16 @@ namespace DotnetAPI2.Services
             }
 
             return _dapper.LoadDataWithParameters<UserComplete>(sql, sqlParameters);
+        }
+
+        public bool UpsertUser(UserComplete user)
+        {
+            if (_reusableSQL.UpsertUser(user))
+            {
+                return true;
+            }
+
+            throw new Exception("Failed to Update User");
         }
 
         public bool DeleteUser(int userId)
