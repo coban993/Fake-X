@@ -10,10 +10,7 @@ using DotnetAPI2.DTOs;
 using DotnetAPI2.Helpers;
 using DotnetAPI2.Models;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cryptography.KeyDerivation;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.IdentityModel.Tokens;
 
 namespace DotnetAPI2.Controllers
 {

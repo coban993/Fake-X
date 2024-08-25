@@ -1,11 +1,5 @@
-using System.Data;
-using Dapper;
-using DotnetAPI2.Data;
-using DotnetAPI2.DTOs;
-using DotnetAPI2.Helpers;
 using DotnetAPI2.Models;
 using DotnetAPI2.Services;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DotnetAPI2.Controllers;
@@ -15,13 +9,9 @@ namespace DotnetAPI2.Controllers;
 [Route("[controller]")]
 public class UserCompleteController : ControllerBase
 {
-    private readonly DataContextDapper _dapper;
-    private readonly ReusableSQL _reusableSQL;
     private readonly IUserService _userService;
-    public UserCompleteController(IConfiguration config, IUserService userService)
+    public UserCompleteController(IUserService userService)
     {
-        _dapper = new DataContextDapper(config);
-        _reusableSQL = new ReusableSQL(config);
         _userService = userService;
     }
 

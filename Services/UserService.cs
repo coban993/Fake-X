@@ -60,7 +60,7 @@ namespace DotnetAPI2.Services
             DynamicParameters sqlParameters = new DynamicParameters();
             sqlParameters.Add("@UserIdParameter", userId, DbType.Int32);
 
-            if(_dapper.ExecuteSqlWithParameters(sql, sqlParameters))
+            if (_dapper.ExecuteSqlWithParameters(sql, sqlParameters))
             {
                 return true;
             }
